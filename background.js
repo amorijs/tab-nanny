@@ -5,9 +5,7 @@ const sortByLastUsed = (array) => array.sort((a, b) => a.lastUsed - b.lastUsed);
 
 const moveTabs = (virtTabs) => {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    console.log('tab', tabs[0])
-    console.log(tabs[0].id);
-    console.log(chrome.tabs.move(tabs[0].id, {index: -1}));
+    setTimeout(() => chrome.tabs.move(tabs[0].id, { index: 0 }), 125);
   });
 };
 
@@ -21,7 +19,7 @@ chrome.tabs.query({}, (tabs) => {
 
 chrome.tabs.onActivated.addListener((activeInfo) => {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    if (previousTabIndex !== null) {
+    if (previousTabIndex) {
       virtualTabs[previousTabIndex].lastUsed = Date.now();
     }
 
@@ -29,5 +27,3 @@ chrome.tabs.onActivated.addListener((activeInfo) => {
     moveTabs();
   });
 });
-
-
