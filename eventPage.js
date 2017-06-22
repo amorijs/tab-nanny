@@ -6,7 +6,7 @@ console.log('test');
 //   });
 // });
 
-chrome.tabs.onUpdated.addListener((activeInfo) => {
+chrome.tabs.onActivated.addListener((activeInfo) => {
   chrome.tabs.query({}, (tabs) => {
     chrome.tabs.move(tabs[1].id, { index: -1 });
   });
