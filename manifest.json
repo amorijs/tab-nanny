@@ -10,7 +10,7 @@
     "default_title": "To the left!"
   },
   "permissions": [
-    "tabs",
+    "tabs"
   ],
   "background": {
     "scripts": ["background.js"],

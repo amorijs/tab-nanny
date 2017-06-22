@@ -3,7 +3,7 @@ let previousTabIndex;
 const leftmp3 = new Audio();
 leftmp3.src = 'totheleft.mp3';
 
-const sortByLastUsed = (array) => array.slice(0).sort((a, b) => a.lastUsed - b.lastUsed);
+const sortByLastUsed = (array) => array.sort((a, b) => a.lastUsed - b.lastUsed);
 
 const moveTabs = (virtTabs) => {
   leftmp3.play();
@@ -27,8 +27,6 @@ chrome.tabs.onActivated.addListener((activeInfo) => {
     }
 
     previousTabIndex = tabs[0].index;
-    // moveTabs();
+    moveTabs();
   });
 });
-
-setTimeout(moveTabs, 10000);
