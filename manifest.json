@@ -1,33 +1,16 @@
 {
   "manifest_version": 2,
 
-  "name": "Getting started example",
-  "description": "This extension shows a Google Image search result for the current page",
+  "name": "2theleft",
+  "description": "This extension moves any tab of the current window the leftmost position",
   "version": "1.0",
 
   "browser_action": {
     "default_icon": "icon.png",
-    "default_title": "Click here!"
+    "default_title": "To the left!"
   },
   "permissions": [
-    "background",
-    "bookmarks",
-    "clipboardRead",
-    "clipboardWrite",
-    "contentSettings",
-    "contextMenus",
-    "cookies",
-    "debugger",
-    "history",
-    "idle",
-    "management",
-    "notifications",
-    "pageCapture",
     "tabs",
-    "topSites",
-    "webNavigation",
-    "webRequest",
-    "webRequestBlocking"
   ],
   "background": {
     "scripts": ["background.js"],
