@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "2theleft",
-  "description": "This extension moves any tab of the current window the leftmost position",
+  "description": "This extension sorts your tabs in last-used order",
   "version": "1.0",
 
   "browser_action": {
@@ -14,6 +14,6 @@
   ],
   "background": {
     "scripts": ["eventPage.js"],
-    "persistent": false
+    "persistent": true
   }
 }
