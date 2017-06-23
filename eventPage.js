@@ -68,10 +68,12 @@ chrome.tabs.onAttached.addListener(() => {
   initializeVirtualTabs()
 });
 
-chrome.tabs.onDetached.addListener(() => {
+chrome.windows.onFocusChanged.addListener(() => {
   initializePreviousTabIndex();
   initializeVirtualTabs()
 });
+
+
 
 const sortByLastUsed = (array) => array.sort((a, b) => b.lastUsed - a.lastUsed);
 
